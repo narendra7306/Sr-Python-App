@@ -6,11 +6,6 @@ pipeline {
                 checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'Github-Credentials', url: 'https://github.com/narendra7306/sr-python-app.git']])
             }
         }
-        stage('version') {
-            steps {
-                sh 'python3 --version'
-            }
-        }
         stage('Build') {
             steps {
                 git branch: 'master', url: 'https://github.com/narendra7306/sr-python-app.git'
