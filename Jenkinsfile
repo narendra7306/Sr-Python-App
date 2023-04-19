@@ -6,9 +6,8 @@ pipeline {
                 checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'Github-Credentials', url: 'https://github.com/narendra7306/sr-python-app.git']])
             }
         }
-        stage('Build') {
+        stage('build stage') {
             steps {
-                git branch: 'master', url: 'https://github.com/narendra7306/sr-python-app.git'
                 sh 'pip install -r requirements.txt'
                 sh 'python3 main.py'
             }
