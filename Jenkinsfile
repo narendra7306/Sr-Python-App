@@ -9,6 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 git branch: 'master', url: 'https://github.com/narendra7306/sr-python-app.git'
+                sh 'pip install -r requirements.txt'
                 sh 'python3 main.py'
             }
         }
