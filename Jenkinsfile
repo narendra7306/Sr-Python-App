@@ -9,7 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 git branch: 'master', url: 'https://github.com/narendra7306/sr-python-app.git'
-                sh 'python3 -m install flask'
+                sh 'python3 flask'
                 sh 'python3 main.py'
             }
         }
